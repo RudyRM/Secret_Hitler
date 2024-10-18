@@ -1,95 +1,67 @@
-import Image from "next/image";
+"use client"; // Ensure the component is marked as a Client Component
+
+import { useState } from "react";
+import Link from "next/link"; // Import Link for internal navigation
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [username, setUsername] = useState(""); // State to store the username
+  const [submitted, setSubmitted] = useState(false); // State to track if username is submitted
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page reload
+    if (username.trim() !== "") {
+      setSubmitted(true); // Mark username as submitted if not empty
+    }
+  };
+
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {!submitted ? (
+        <div className={styles.usernamePrompt}>
+          <h2>Enter Your Username</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className={styles.input}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            <button type="submit" className={styles.button}>
+              Submit
+            </button>
+          </form>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      ) : (
+        <>
+          <header className={styles.header}>
+            <h1>Welcome, {username}! Secret Hitler</h1>
+            <nav>
+              <ul className={styles.nav}>
+                {/* Use Link for internal navigation to the /play page */}
+                <li>
+                  <Link href="/play">Play</Link>
+                </li>
+                {/* External link to the Secret Hitler rules PDF */}
+                <li>
+                  <a
+                    href="https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Rules
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+
+          <footer className={styles.footer}>
+            <p>&copy; 2024 Secret Hitler</p>
+          </footer>
+        </>
+      )}
     </div>
   );
 }
