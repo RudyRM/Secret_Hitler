@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'tipografia';
+  src: url('../../assets/Hawthorne_Vintage.otf') format('truetype');
+}
+
+.chat {
+  width: 97%;
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  max-height: 100%;
+}
+
+.message {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #ff4d4d;
+  border-radius: 5px;
+  font-family: 'tipografia', sans-serif;
+  color: #d4d4d4;
+  text-align: left;
+  font-size: 21px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  word-break: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-input {
+  display: flex;
+  width: 100%;
+  padding: 5px 0;
+  justify-content: space-between;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  font-family: 'tipografia', sans-serif;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #ff4d4d;
+  color: white;
+  font-family: 'tipografia', sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.chat-input button:hover {
+  background-color: #ce4747;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
