@@ -1,2 +1,2 @@
 # Secret_Hitler
-**La aplicación está en la rama pwa y la base de datos en bdd**
+**La aplicación está en la rama pwa y el backend en bdd**
