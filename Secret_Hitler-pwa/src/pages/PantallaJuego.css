@@ -1,0 +1,33 @@
+
+.contenedor{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.lado-izquierdo{
+    flex: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lado-derecho{
+    flex: 55%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat {
+    width: 95%;
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ajustamos la altura total del chat */
+    overflow: hidden; /* Evita que el contenido desborde el contenedor principal */
+}
+
+.perfil{
+    flex: 20%;
+}

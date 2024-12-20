@@ -1,0 +1,59 @@
+.juego-container {
+    width: 100%;
+    height: 100%;
+    background-color: #282F32;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Contenedor para los botones */
+  .botones-container {
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 20px;
+  }
+  
+  /* Botones */
+  .salir-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4c4c;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .salir-btn:hover {
+    background-color: #ff2a2a;
+  }
+  
+  /* Título Usuarios */
+  .titulo-usuarios {
+    font-size: 28px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Grilla de usuarios conectados */
+  .grilla-conectados {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .usuario {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

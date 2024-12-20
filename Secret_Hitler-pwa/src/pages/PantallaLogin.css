@@ -1,0 +1,62 @@
+
+@font-face {
+    font-family: 'tipografia';
+    src: url('../assets/Hawthorne_Vintage.otf') format('truetype'); /* Cambia 'ruta/a/tu-fuente.ttf' por la ruta correcta */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/background.png");
+    background-size: cover; /* Asegurar que la imagen de fondo cubra toda el área */
+    background-position: center;
+    margin: 0;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    padding: 20px;
+    background: #282F32;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Aumentar la sombra */
+    color: white; /* Para que el texto sea visible con el fondo negro */
+}
+
+.login-title {
+    width: 150px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantener la proporción del logo */
+    margin-bottom: 20px; /* Añade espacio entre el logo y el input */
+}
+
+.login-input {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-family: 'tipografia', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-button {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    font-family: 'tipografia', sans-serif;
+    background-color: #ff4d4d; /* Color rojo */
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #ce4747; /* Cambiar a un rojo más oscuro en hover */
+}
